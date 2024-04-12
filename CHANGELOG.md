@@ -1,3 +1,66 @@
+# v2.2.4
+
+## Bug Fixes
+
+* Fixes for GHSA-88jx-383q-w4qc and GHSA-95pr-fxf5-86gv (#3661)
+* ErrNoSignaturesFound should be used when there is no signature attached to an image. (#3526)
+* fix semgrep issues for dgryski.semgrep-go ruleset (#3541)
+* Honor creation timestamp for signatures again (#3549)
+
+## Features
+
+* Adds Support for Fulcio Client Credentials Flow, and Argument to Set Flow Explicitly (#3578)
+
+## Documentation
+
+* add oci bundle spec (#3622)
+* Correct help text of triangulate cmd (#3551)
+* Correct help text of verify-attestation policy argument (#3527)
+* feat: add OVHcloud MPR registry tested with cosign (#3639)
+
+## Testing
+
+* Refactor e2e-tests.yml workflow (#3627)
+* Clean up and clarify e2e scripts (#3628)
+* Don't ignore transparency log in tests if possible (#3528)
+* Make E2E tests hermetic (#3499)
+* add e2e test for pkcs11 token signing (#3495)
+
+# v2.2.3
+
+## Bug Fixes
+
+* Fix race condition on verification with multiple signatures attached to image (#3486)
+* fix(clean): Fix clean cmd for private registries (#3446)
+* Fixed BYO PKI verification (#3427)
+
+## Features
+
+* Allow for option in cosign attest and attest-blob to upload attestation as supported in Rekor (#3466)
+* Add support for OpenVEX predicate type (#3405)
+
+## Documentation
+
+* Resolves #3088: `version` sub-command expected behaviour documentation and testing (#3447)
+* add examples for cosign attach signature cmd (#3468)
+
+## Misc
+
+* Remove CertSubject function (#3467)
+* Use local rekor and fulcio instances in e2e tests (#3478)
+
+## Contributors
+
+* aalsabag
+* Bob Callaway
+* Carlos Tadeu Panato Junior
+* Colleen Murphy
+* Hayden B
+* Mukuls77
+* Omri Bornstein
+* Puerco
+* vivek kumar sahu
+
 # v2.2.2
 
 v2.2.2 adds a new container with a shell, `gcr.io/projectsigstore/cosign:vx.y.z-dev`, in addition to the existing
@@ -25,7 +88,7 @@ For private deployments, we have also added an alias for `--insecure-skip-log`, 
 
 ## Documentation
 
-* Update SBOM_SPEC.md (#3358)
+* Update SBOM\_SPEC.md (#3358)
 
 ## Contributors
 
@@ -513,6 +576,24 @@ Critical breaking changes include:
 * Zack Newman
 * asraa
 * priyawadhwa
+
+# v1.13.6
+
+_Note: v1.13.3, .4, and .5 were skipped due to issues in the release pipeline_
+
+This release backports support for the latest TUF specification. We encourage users to upgrade to Cosign v2.
+
+## Updates
+* V1 go tuf update (#3598)
+* Update cloud build script to latest for v1.13.x (#3615)
+
+# v1.13.2
+
+This release backports a security fix. We encourage users to upgrade to Cosign v2.
+
+## Updates
+* [release-1.13] update builder image that uses go 1.19.4 (#2521)
+* Backport GHSA-vfp6-jrw2-99g9 in (#3364)
 
 # v1.13.1
 

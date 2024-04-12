@@ -47,6 +47,7 @@ cosign attest [flags]
       --attachment-tag-prefix [AttachmentTagPrefix]sha256-[TargetImageDigest].[AttachmentName]   optional custom prefix to use for attached image tags. Attachment images are tagged as: [AttachmentTagPrefix]sha256-[TargetImageDigest].[AttachmentName]
       --certificate string                                                                       path to the X.509 certificate in PEM format to include in the OCI Signature
       --certificate-chain string                                                                 path to a list of CA X.509 certificates in PEM format which will be needed when building the certificate chain for the signing certificate. Must start with the parent intermediate CA certificate of the signing certificate and end with the root certificate. Included in the OCI Signature
+      --fulcio-auth-flow string                                                                  fulcio interactive oauth2 flow to use for certificate from fulcio. Defaults to determining the flow based on the runtime environment. (options) normal|device|token|client_credentials
       --fulcio-url string                                                                        address of sigstore PKI server (default "https://fulcio.sigstore.dev")
   -h, --help                                                                                     help for attest
       --identity-token string                                                                    identity token to use for certificate from fulcio. the token or a path to a file containing the token is accepted.
@@ -65,13 +66,14 @@ cosign attest [flags]
       --registry-password string                                                                 registry basic auth password
       --registry-token string                                                                    registry bearer auth token
       --registry-username string                                                                 registry basic auth username
+      --rekor-entry-type string                                                                  specifies the type to be used for a rekor entry upload. Options are intoto or dsse (default).  (default "dsse")
       --rekor-url string                                                                         address of rekor STL server (default "https://rekor.sigstore.dev")
       --replace                                                                                  
       --sk                                                                                       whether to use a hardware security key
       --slot string                                                                              security key slot to use for generated key (default: signature) (authentication|signature|card-authentication|key-management)
       --timestamp-server-url string                                                              url to the Timestamp RFC3161 server, default none. Must be the path to the API to request timestamp responses, e.g. https://freetsa.org/tsr
       --tlog-upload                                                                              whether or not to upload to the tlog (default true)
-      --type string                                                                              specify a predicate type (slsaprovenance|slsaprovenance02|slsaprovenance1|link|spdx|spdxjson|cyclonedx|vuln|custom) or an URI (default "custom")
+      --type string                                                                              specify a predicate type (slsaprovenance|slsaprovenance02|slsaprovenance1|link|spdx|spdxjson|cyclonedx|vuln|openvex|custom) or an URI (default "custom")
   -y, --yes                                                                                      skip confirmation prompts for non-destructive operations
 ```
 

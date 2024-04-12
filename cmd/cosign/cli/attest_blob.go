@@ -61,6 +61,7 @@ func AttestBlob() *cobra.Command {
 				Slot:                     o.SecurityKey.Slot,
 				FulcioURL:                o.Fulcio.URL,
 				IDToken:                  o.Fulcio.IdentityToken,
+				FulcioAuthFlow:           o.Fulcio.AuthFlow,
 				InsecureSkipFulcioVerify: o.Fulcio.InsecureSkipFulcioVerify,
 				RekorURL:                 o.Rekor.URL,
 				OIDCIssuer:               o.OIDC.Issuer,
@@ -85,6 +86,7 @@ func AttestBlob() *cobra.Command {
 				OutputAttestation: o.OutputAttestation,
 				OutputCertificate: o.OutputCertificate,
 				Timeout:           ro.Timeout,
+				RekorEntryType:    o.RekorEntryType,
 			}
 			return v.Exec(cmd.Context(), args[0])
 		},

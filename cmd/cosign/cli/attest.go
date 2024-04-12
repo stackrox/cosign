@@ -74,6 +74,7 @@ func Attest() *cobra.Command {
 				Slot:                     o.SecurityKey.Slot,
 				FulcioURL:                o.Fulcio.URL,
 				IDToken:                  o.Fulcio.IdentityToken,
+				FulcioAuthFlow:           o.Fulcio.AuthFlow,
 				InsecureSkipFulcioVerify: o.Fulcio.InsecureSkipFulcioVerify,
 				RekorURL:                 o.Rekor.URL,
 				OIDCIssuer:               o.OIDC.Issuer,
@@ -95,6 +96,7 @@ func Attest() *cobra.Command {
 				Replace:         o.Replace,
 				Timeout:         ro.Timeout,
 				TlogUpload:      o.TlogUpload,
+				RekorEntryType:  o.RekorEntryType,
 			}
 
 			for _, img := range args {
